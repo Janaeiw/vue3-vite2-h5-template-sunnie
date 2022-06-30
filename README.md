@@ -438,17 +438,6 @@ server: {
 
 根目录下的`.eslintrc.js`、`.stylelint.config.js`、`.prettier.config.js`内置了 lint 规则，帮助你规范地开发代码，有助于提高团队的代码质量和协作性，可以根据团队的规则进行修改
 
-# 关于我
-
-扫描添加下方的微信并备注加交流群，交流学习，及时获取代码最新动态。
-
- <p>
-  <img src="./public/account.jpg" width="256" style="display:inline; ">
-</p>
-
-<p>
-  <img src="./public/group.png" width="256" style="display:inline; ">
-</p>
  
 如果对你有帮助送我一颗珍贵的小星星（づ￣3￣）づ╭❤～
 "# vite2-vue3-h5-template-1"
