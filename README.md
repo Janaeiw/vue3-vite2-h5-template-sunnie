@@ -171,16 +171,16 @@ npm i vite-plugin-style-import -D
 
 #### 使用组件
 
-项目在 `plugins/nutUI.ts` 下统一管理组件，用哪个引入哪个，无需在页面里重复引用
+项目在 `plugins/vantUI.ts` 下统一管理组件，用哪个引入哪个，无需在页面里重复引用
 
 ```javascript
 // 按需全局引入nutUI组件
 import Vue from 'vue';
-import { Button, Cell, CellGroup } from '@nutui/nutui';
-export const nutUiComponents = [Button, Cell, CellGroup];
+import { Button, Cell, CellGroup } from 'vant';
+export const vantUiComponents = [Button, Cell, CellGroup];
 
 // 在main.ts文件中引入
-nutUiComponents.forEach((item) => {
+vantUiComponents.forEach((item) => {
   app.use(item);
 });
 ```
