@@ -34,7 +34,7 @@ npm run dev
 - √ vite
 - [√ 配置多环境变量](#env)
 - [√ viewport 适配方案](#viewport)
-- [√ nutUI 组件按需加载](#nutUI)
+- [√ vantUI 组件按需加载](#vantUI)
 - [√ Pinia 状态管理](#Pinia)
 - [√ Vue-router4](#router)
 - [√ Axios 封装及接口管理](#axios)
@@ -136,7 +136,7 @@ module.exports = {
 
 [▲ 回顶部](#top)
 
-### <span id="nutUI">✅ nutUI 组件按需加载 </span>
+### <span id="vantUI">✅ vantUI 组件按需加载 </span>
 
 Vite 构建工具，使用 vite-plugin-style-import 实现按需引入。
 
@@ -149,10 +149,21 @@ npm i vite-plugin-style-import -D
 在 `vite.config.ts` 设置
 
 ```javascript
+ import { createStyleImportPlugin, VantResolve } from 'vite-plugin-style-import';
+ 
  plugins: [
      ...
      createStyleImportPlugin({
-         resolves: [NutuiResolve()],
+         resolves: [VantResolve()],
+         libs: [
+          {
+            libraryName: 'vant',
+            esModule: true,
+            resolveStyle: (name) => {
+              return `../es/${name}/style/index`;
+            },
+          },
+        ],
      }),
      ...
  ],
