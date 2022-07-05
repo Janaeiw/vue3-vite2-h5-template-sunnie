@@ -1,7 +1,7 @@
 <template>
   <nut-navbar :left-show="false" :title="$t('tabbar.member')" />
   <div class="avatar-wrap">
-    <nut-avatar class="avatar" size="large" icon="/public/images/avatar.jpg" />
+    <nut-avatar class="avatar" size="large" icon="/images/avatar.jpg" />
     <div class="member-detail">
       <p class="nickname"
         >Janaeiw
