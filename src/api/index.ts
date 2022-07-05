@@ -18,5 +18,6 @@ export function login(data: any) {
     url: '/login',
     method: 'POST',
     data,
+    loading: true,
   });
 }

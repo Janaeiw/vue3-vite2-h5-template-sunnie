@@ -112,9 +112,9 @@ const service = axios.create({
 
 // Request interceptors
 service.interceptors.request.use(
-  (config: AxiosRequestConfig | any) => {
+  (config: AxiosRequestConfig) => {
     // 加载动画
-    if (config.loading ?? true) {
+    if (config.loading) {
       Toast.loading({
         message: '加载中...',
         forbidClick: true,

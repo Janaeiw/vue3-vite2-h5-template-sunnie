@@ -1,9 +1,13 @@
 <template>
   <nut-navbar :left-show="false" :title="$t('tabbar.member')" />
   <div class="avatar-wrap">
-    <nut-avatar class="avatar" size="large" icon="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg" />
+    <nut-avatar class="avatar" size="large" icon="../../../public/touxiang.jpg" />
     <div class="member-detail">
-      <p class="nickname"> 昵称<nut-button shape="square" size="small" type="default" @click="goLogin"> 去登录 </nut-button> </p>
+      <p class="nickname"
+        >Janaeiw
+        <!-- <nut-button shape="square" size="small" type="default" @click="goLogin"> 去登录
+        </nut-button> -->
+      </p>
       <p class="info"> 个人其他信息，后续补充.... </p>
     </div>
   </div>
@@ -23,15 +27,15 @@
   // import { useUserStore } from '@/store/modules/user';
   // import { useRouter } from 'vue-router';
 
-  const router = useRouter();
+  // const router = useRouter();
   // const userStore = useUserStore();
   // const getUserInfo = computed(() => {
   //   const { name = '' } = userStore.getUserInfo || {};
   //   return name;
   // });
-  const goLogin = () => {
-    router.push('/login');
-  };
+  // const goLogin = () => {
+  //   router.push('/login');
+  // };
 </script>
 
 <style lang="scss">
