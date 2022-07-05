@@ -1,5 +1,5 @@
 {
-  "name": "vue-h5-template",
+  "name": "vite2-vue3-h5-template",
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
@@ -20,6 +20,7 @@
     "@vueuse/core": "8.7.5",
     "@vueuse/integrations": "8.7.5",
     "axios": "0.27.2",
+    "dayjs": "^1.11.3",
     "pinia": "^2.0.14",
     "universal-cookie": "^4.0.4",
     "vant": "^3.5.2",

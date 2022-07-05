@@ -1,3 +1,9 @@
+/**
+ * @name ConfigImageminPlugin
+ * @description 一个压缩图片资产的 vite 插件
+ * https://github.com/vbenjs/vite-plugin-imagemin
+ */
+
 import viteImagemin from 'vite-plugin-imagemin';
 
 export function ConfigImageminPlugin() {

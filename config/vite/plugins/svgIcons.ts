@@ -1,7 +1,9 @@
 /**
  * @name SvgIconsPlugin
  * @description 加载SVG文件，自动引入
+ * https://github.com/vbenjs/vite-plugin-svg-icons
  */
+
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 import path from 'path';
 

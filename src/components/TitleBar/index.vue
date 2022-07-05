@@ -8,24 +8,24 @@
   </div>
   <nut-tabbar unactive-color="#364636" active-color="#1989fa" @tab-switch="tabSwitch">
     <nut-tabbar-item :tab-title="$t('tabbar.home')" font-class-name="iconfont" class-prefix="icon" icon="home" />
-    <nut-tabbar-item :tab-title="$t('tabbar.list')" font-class-name="iconfont" class-prefix="icon" icon="list" />
+    <nut-tabbar-item :tab-title="$t('tabbar.demo')" font-class-name="iconfont" class-prefix="icon" icon="list" />
     <nut-tabbar-item :tab-title="$t('tabbar.member')" font-class-name="iconfont" class-prefix="icon" icon="member" />
   </nut-tabbar>
 </template>
 
 <script lang="ts" setup>
-  import { useRouter } from 'vue-router';
+  // import { useRouter } from 'vue-router';
 
   const router = useRouter();
 
-  const tabSwitch = (item, index) => {
+  const tabSwitch = (item: any, index: any) => {
     console.log(item, index);
     switch (index) {
       case 0:
         router.push('/home');
         break;
       case 1:
-        router.push('/list');
+        router.push('/demo');
         break;
       case 2:
         router.push('/member');

@@ -2,12 +2,13 @@
  * @name createVitePlugins
  * @description 封装plugins数组统一调用
  */
+
 import type { Plugin } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import vueSetupExtend from 'vite-plugin-vue-setup-extend';
 import { ConfigSvgIconsPlugin } from './svgIcons';
-import { AutoRegistryComponents } from './component';
+import { AutoRegistryComponents } from './autoComponents';
 import { AutoImportDeps } from './autoImport';
 import { ConfigMockPlugin } from './mock';
 import { ConfigCompressPlugin } from './compress';

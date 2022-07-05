@@ -5,6 +5,7 @@ import '@vue/runtime-core';
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    IconCommunity: typeof import('./../src/components/icons/IconCommunity.vue')['default'];
     RouterLink: typeof import('vue-router')['RouterLink'];
     RouterView: typeof import('vue-router')['RouterView'];
     TitleBar: typeof import('./../src/components/TitleBar/index.vue')['default'];

@@ -1,7 +1,8 @@
 export const lang = {
   tabbar: {
     home: 'Home',
-    list: 'List',
+    pkgInfo: 'PkgInfo',
+    demo: 'Demo',
     member: 'Member',
   },
   language: {

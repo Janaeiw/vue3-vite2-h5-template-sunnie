@@ -1,10 +1,9 @@
 <template>
-  <van-button type="primary">主要按钮</van-button>
   <nut-navbar :left-show="false" :title="$t('tabbar.home')" />
   <header class="header"> <img src="https://www.sunniejs.cn/static/weapp/logo.png" /><span> VUE H5开发模板</span> </header>
   <p class="intro-header">
     {{ $t('introduction') }}
-    <a href="https://github.com/sunniejs/vue-h5-template.git">
+    <a href="https://github.com/zhongjunwei/vue3-vite2-h5-template-sunnie">
       <nut-icon class="github-icon" name="github" />
     </a>
   </p>
@@ -14,6 +13,7 @@
     <nut-cell title="Axios" icon="Check" />
     <nut-cell title="Pinia" icon="Check" />
     <nut-cell title="NutUI" icon="Check" />
+    <nut-cell title="VantUI" icon="Check" />
     <nut-cell title="Vue-i18n" icon="Check" />
     <nut-cell title="Jsx" icon="Check" />
   </nut-cell-group>
@@ -29,7 +29,7 @@
 </template>
 
 <script lang="ts" setup>
-  import { computed } from 'vue';
+  // import { computed } from 'vue';
   import { useUserStore } from '/@/store/modules/user';
   import { setLang } from '/@/i18n';
 
@@ -38,7 +38,7 @@
     const { name = '' } = userStore.getUserInfo || {};
     return name;
   });
-  const changeLang = (type) => {
+  const changeLang = (type: any) => {
     setLang(type);
   };
 </script>

@@ -1,7 +1,8 @@
 export const lang = {
   tabbar: {
     home: '首页',
-    list: '列表',
+    pkgInfo: '项目信息',
+    demo: '案例',
     member: '我的',
   },
   language: {

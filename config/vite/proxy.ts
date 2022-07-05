@@ -1,20 +1,24 @@
-import { API_BASE_URL, API_TARGET_URL, MOCK_API_BASE_URL, MOCK_API_TARGET_URL } from '../../config/constant';
-import { ProxyOptions } from 'vite';
-type ProxyTargetList = Record<string, ProxyOptions>;
+/**
+ * @name createProxy
+ * @description vite-api代理配置
+ * @param viteEnv
+ * https://vitejs.cn/config/#build-lib
+ */
 
-const init: ProxyTargetList = {
-  // test
-  [API_BASE_URL]: {
-    target: API_TARGET_URL,
-    changeOrigin: true,
-    rewrite: (path) => path.replace(new RegExp(`^${API_BASE_URL}`), ''),
-  },
-  // mock
-  [MOCK_API_BASE_URL]: {
-    target: MOCK_API_TARGET_URL,
-    changeOrigin: true,
-    rewrite: (path) => path.replace(new RegExp(`^${MOCK_API_BASE_URL}`), '/api'),
-  },
-};
+export function createProxy(viteEnv: any) {
+  const { VITE_API_BASE_URL, VITE_API_TARGET_URL } = viteEnv;
 
-export default init;
+  return {
+    [VITE_API_BASE_URL]: {
+      target: VITE_API_TARGET_URL,
+      changeOrigin: true,
+      rewrite: (path: any) => path.replace(new RegExp(`^${VITE_API_BASE_URL}`), ''),
+    },
+    // mock
+    // [MOCK_API_BASE_URL]: {
+    //   target: MOCK_API_TARGET_URL,
+    //   changeOrigin: true,
+    //   rewrite: (path:any) => path.replace(new RegExp(`^${MOCK_API_BASE_URL}`), '/api'),
+    // },
+  };
+}
