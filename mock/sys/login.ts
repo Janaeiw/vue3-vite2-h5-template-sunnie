@@ -5,21 +5,26 @@ interface response {
   query: Recordable;
 }
 
+export function resultSuccess<T = Recordable>(data: T, { message = 'ok' } = {}) {
+  return {
+    retcode: 0,
+    result: data,
+    message,
+    type: 'success',
+  };
+}
+
 export default [
   {
-    url: '/webapi/api/login',
+    url: '/webapi/login',
     method: 'post',
     response: (_request: response) => {
-      return {
-        retcode: 0,
-        result: {
-          author: 'Janaeiw',
-          avatar: '/images/avatar.jpg',
-          projectAddress: 'https://github.com/zhongjunwei/vue3-vite2-h5-template-sunnie',
-        },
-        message: 'ok',
-        type: 'success',
+      const info = {
+        author: 'Janaeiw',
+        avatar: '/images/avatar.jpg',
+        projectAddress: 'https://github.com/Janaeiw/vue3-vite2-h5-template-sunnie',
       };
+      return resultSuccess(info);
     },
   },
 ] as MockMethod[];

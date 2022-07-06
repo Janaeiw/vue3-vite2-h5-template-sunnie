@@ -1,7 +1,6 @@
-import { loginPassword } from '/@/api';
+import { login } from '/@/api';
 import { useCookies } from '@vueuse/integrations/useCookies';
 import { defineStore } from 'pinia';
-import { watch } from 'vue';
 import { AnyObject } from '/#/global';
 
 const { VITE_TOKEN_KEY } = import.meta.env;
@@ -29,11 +28,11 @@ export const useUserStore = defineStore({
     },
     login(_data: any) {
       return new Promise((resolve) => {
-        const { data }: any = loginPassword(_data);
-        watch(data, () => {
-          this.setInfo(data.value);
+        login(_data).then((res: any) => {
+          const { result } = res;
+          this.setInfo(result);
           // useCookies().set(VITE_TOKEN_KEY as string, data.value.token);
-          resolve(data.value);
+          resolve(result);
         });
       });
     },

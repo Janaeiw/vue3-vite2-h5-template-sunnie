@@ -29,12 +29,10 @@
       if (valid) {
         const data = {
           ...formData,
-          type: 'PASSWORD',
         };
-        const userInfo = await userStore.login(data);
-        if (userInfo) {
-          router.push({ name: 'Home' });
-        }
+        userStore.login(data).then((_res: any) => {
+          router.push({ path: '/member' });
+        });
       } else {
         console.log('error submit!!', errors);
       }
