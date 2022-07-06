@@ -54,6 +54,9 @@ export function createVitePlugins(isBuild: boolean) {
   // eruda
   vitePlugins.push(ConfigEruda());
 
+  // vite-plugin-mock
+  vitePlugins.push(ConfigMockPlugin(isBuild));
+
   // rollup-plugin-visualizer
   vitePlugins.push(ConfigVisualizerConfig());
   if (isBuild) {
@@ -62,9 +65,6 @@ export function createVitePlugins(isBuild: boolean) {
 
     // vite-plugin-svg-icons
     vitePlugins.push(ConfigSvgIconsPlugin(isBuild));
-
-    // vite-plugin-mock
-    vitePlugins.push(ConfigMockPlugin(isBuild));
   }
   return vitePlugins;
 }

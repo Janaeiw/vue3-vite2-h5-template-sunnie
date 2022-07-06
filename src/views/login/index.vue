@@ -20,14 +20,18 @@
 
   const userStore = useUserStore();
   const formData = reactive({
-    name: '',
-    pwd: '',
+    name: 'admin',
+    pwd: '123456',
   });
   const ruleForm = ref<any>(null);
   const submit = () => {
     ruleForm.value.validate().then(async ({ valid, errors }: any) => {
       if (valid) {
-        const userInfo = await userStore.login();
+        const data = {
+          ...formData,
+          type: 'PASSWORD',
+        };
+        const userInfo = await userStore.login(data);
         if (userInfo) {
           router.push({ name: 'Home' });
         }

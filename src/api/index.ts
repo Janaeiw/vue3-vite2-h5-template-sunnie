@@ -4,11 +4,12 @@ import request from '/@/utils/request';
  * 账号密码登录
  * @returns UseAxiosReturn
  */
-export function loginPassword() {
+export function loginPassword(data: any) {
   return request({
     url: `/api/login`,
     method: 'POST',
-    data: { name: '123' },
+    data,
+    loading: true,
   });
 }
 

@@ -27,9 +27,9 @@ export const useUserStore = defineStore({
     setInfo(info: any) {
       this.info = info ? info : '';
     },
-    login() {
+    login(_data: any) {
       return new Promise((resolve) => {
-        const { data }: any = loginPassword();
+        const { data }: any = loginPassword(_data);
         watch(data, () => {
           this.setInfo(data.value);
           // useCookies().set(VITE_TOKEN_KEY as string, data.value.token);
