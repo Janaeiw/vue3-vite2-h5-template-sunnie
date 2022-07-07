@@ -51,6 +51,9 @@ export default function ({ command, mode }: ConfigEnv): UserConfigExport {
       proxy: createProxy(viteEnv),
     },
     plugins: createVitePlugins(isProduction),
+    build: {
+      minify: 'esbuild',
+    },
     css: {
       preprocessorOptions: {
         scss: {

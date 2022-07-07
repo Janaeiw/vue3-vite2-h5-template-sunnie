@@ -1,5 +1,5 @@
 {
-  "name": "vite2-vue3-h5-template",
+  "name": "vue3-vite2-h5-template",
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",

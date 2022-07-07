@@ -112,7 +112,7 @@ const service = axios.create({
 
 // Request interceptors
 service.interceptors.request.use(
-  (config: AxiosRequestConfig) => {
+  (config: AxiosRequestConfig | any) => {
     // 加载动画
     if (config.loading) {
       Toast.loading({

@@ -39,7 +39,7 @@ export function createVitePlugins(isBuild: boolean) {
   // 自动生成路由
   vitePlugins.push(ConfigPagesPlugin());
 
-  // 开启.gz压缩  rollup-plugin-gzip
+  // 开启.gz压缩 rollup-plugin-gzip
   vitePlugins.push(ConfigCompressPlugin());
 
   // 监听配置文件改动重启
