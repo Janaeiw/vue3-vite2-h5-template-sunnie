@@ -6,9 +6,7 @@
 
 掘金: [移动端适配方案](https://juejin.cn/post/7018433228591595550)
 
-<p>
-  <img src="./public/images/screen.png" width="320" style="display:inline; ">
-</p>
+<img src="./public/images/screen.png" width="320" style="display:inline; ">
 
 ### Node 版本要求
 
@@ -42,6 +40,7 @@ npm run dev
 - [√ alias](#alias)
 - [√ proxy 跨域](#proxy)
 - [√ Eslint+Pettier+stylelint 统一开发规范 ](#lint)
+- [√ 自定义指令 按钮权限 ](#directive)
 
 ### <span id="env">✅ 配置多环境变量 </span>
 
@@ -448,5 +447,22 @@ server: {
 ### <span id="lint">✅ Eslint+Pettier+stylelint 统一开发规范 </span>
 
 根目录下的`.eslintrc.js`、`.stylelint.config.js`、`.prettier.config.js`内置了 lint 规则，帮助你规范地开发代码，有助于提高团队的代码质量和协作性，可以根据团队的规则进行修改
+
+[▲ 回顶部](#top)
+
+## <span id="directive">✅ 自定义指令 按钮权限 </span>
+
+- 声明一组可用于组件实例中的指令
+- directive 文件夹目录
+
+```js
+- directive
+- modules 模块化
+- | - buttonAuth.ts 按钮权限配置
+- index.ts 动态引入模块方法
+```
+
+- main.ts 自定义指令导入方法
+- src/views/test/testBtnAuth.vue 使用案例
 
 如果对你有帮助送我一颗珍贵的小星星（づ￣ 3 ￣）づ ╭❤ ～
