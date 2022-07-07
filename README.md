@@ -7,7 +7,7 @@
 掘金: [移动端适配方案](https://juejin.cn/post/7018433228591595550)
 
 <p>
-  <img src="./public/screen.png" width="320" style="display:inline; ">
+  <img src="./public/images/screen.png" width="320" style="display:inline; ">
 </p>
 
 ### Node 版本要求
