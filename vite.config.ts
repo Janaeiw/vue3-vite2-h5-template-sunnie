@@ -26,8 +26,11 @@ export default function ({ command, mode }: ConfigEnv): UserConfigExport {
   // The boolean type read by loadEnv is a string. This function can be converted to boolean type
   const viteEnv = wrapperEnv(env);
 
+  const { VITE_PUBLIC_PATH } = viteEnv;
+
   return {
-    root,
+    root: root,
+    base: VITE_PUBLIC_PATH,
     resolve: {
       alias: [
         {
