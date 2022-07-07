@@ -1,4 +1,4 @@
-# vue-h5-template
+# [vue3-vite2-h5-template-sunnie](https://github.com/Janaeiw/vue3-vite2-h5-template-sunnie)
 
 基于 vue3 + vite + nut ui + sass + viewport 适配方案 +axios 封装，构建手机端模板脚手架
 
@@ -18,9 +18,9 @@
 
 ```bash
 
-git clone https://github.com/sunniejs/vue-h5-template.git
+git clone
 
-cd vue-h5-template
+cd vue3-vite2-h5-template-sunnie
 
 npm install
 
