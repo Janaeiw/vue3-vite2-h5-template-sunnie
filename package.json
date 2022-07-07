@@ -6,6 +6,7 @@
     "dev:test": "vite --mode test",
     "dev:prod": "vite --mode production",
     "build": "vue-tsc --noEmit && vite build",
+    "build:test": "vue-tsc --noEmit && vite build --mode test",
     "report": "cross-env REPORT=true npm run build",
     "preview": "vite preview",
     "lint:eslint": "eslint --cache --max-warnings 0  \"{src,mock}/**/*.{vue,ts,tsx}\" --fix",

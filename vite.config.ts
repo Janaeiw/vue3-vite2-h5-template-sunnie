@@ -5,6 +5,7 @@ import { wrapperEnv } from './config/utils';
 import pkg from './package.json';
 import dayjs from 'dayjs';
 import { createProxy } from './config/vite/proxy';
+import { createBuild } from './config/vite/build';
 
 const { dependencies, devDependencies, name, version } = pkg;
 // 应用信息
@@ -51,9 +52,7 @@ export default function ({ command, mode }: ConfigEnv): UserConfigExport {
       proxy: createProxy(viteEnv),
     },
     plugins: createVitePlugins(isProduction),
-    build: {
-      minify: 'esbuild',
-    },
+    build: <any>createBuild(viteEnv),
     css: {
       preprocessorOptions: {
         scss: {
