@@ -4,11 +4,11 @@
  * https://github.com/anncwb/vite-plugin-style-import
  */
 
-import { createStyleImportPlugin, NutuiResolve, VantResolve } from 'vite-plugin-style-import';
+import { createStyleImportPlugin, VantResolve } from 'vite-plugin-style-import';
 
 export const ConfigStyleImport = () => {
   return createStyleImportPlugin({
-    resolves: [NutuiResolve(), VantResolve()],
+    resolves: [VantResolve()],
     libs: [
       {
         libraryName: 'vant',
