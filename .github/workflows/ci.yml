@@ -64,11 +64,11 @@ jobs:
         run: |
           yarn
           yarn build
-          cp dist/index.html dist/404.html
+          cp frontend_test/index.html frontend_test/404.html
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           branch: gh-pages
-          folder: dist
+          folder: frontend_test
