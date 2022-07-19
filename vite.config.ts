@@ -60,7 +60,7 @@ export default function ({ command, mode }: ConfigEnv): UserConfigExport {
       preprocessorOptions: {
         scss: {
           // 配置 nutui 全局 scss 变量
-          // additionalData: `@import "@nutui/nutui/dist/styles/variables.scss";`,
+          additionalData: `@import "@nutui/nutui/dist/styles/variables.scss";`,
         },
       },
     },
