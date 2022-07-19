@@ -17,6 +17,14 @@ export const ConfigStyleImport = () => {
           return `../es/${name}/style/index`;
         },
       },
+      {
+        libraryName: '@nutui/nutui',
+        esModule: true,
+        resolveStyle: (name) => {
+          name = name.toLowerCase().replace('-', ''); //NutuiResolve官方版目前在linux会造成大小写不一致问题无法加载资源
+          return `@nutui/nutui/dist/packages/${name}/index.scss`;
+        },
+      },
     ],
   });
 };
