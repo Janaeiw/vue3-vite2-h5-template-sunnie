@@ -16,7 +16,7 @@ export function createBuild(viteEnv) {
     //小于此阈值的导入或引用资源将内联为 base64 编码，以避免额外的 http 请求。设置为 0 可以完全禁用此项
     assetsInlineLimit: 4096,
     chunkSizeWarningLimit: 2000, // chunk 大小警告的限制（以 kbs 为单位）
-    assetsDir: 'static/img/', // 静态资源目录
+    assetsDir: 'static', // 静态资源目录
     // rollup 打包配置
     rollupOptions: {
       output: {
