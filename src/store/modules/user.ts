@@ -39,7 +39,7 @@ export const useUserStore = defineStore({
               projectAddress: 'https://github.com/Janaeiw/vue3-vite2-h5-template-sunnie',
             });
           }
-          // useCookies().set(VITE_TOKEN_KEY as string, data.value.token);
+          useCookies().set(VITE_TOKEN_KEY as string, result.accessToken || 'shuihaibushigeshuiage');
           resolve(result);
         });
       });
