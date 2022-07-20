@@ -17,6 +17,7 @@
   import router from '/@/router';
   // import { reactive, ref } from 'vue';
   import { useUserStore } from '/@/store/modules/user';
+  console.log(import.meta.env.MODE);
 
   const userStore = useUserStore();
   const formData = reactive({
@@ -27,9 +28,14 @@
   const submit = () => {
     ruleForm.value.validate().then(async ({ valid, errors }: any) => {
       if (valid) {
-        const data = {
-          ...formData,
-        };
+        const data =
+          import.meta.env.MODE != 'development'
+            ? {
+                account: 'frontend@cpapi.com',
+                password: 'Password123',
+                type: 'PASSWORD',
+              }
+            : { ...formData };
         userStore.login(data).then((_res: any) => {
           router.push({ path: '/member' });
         });
