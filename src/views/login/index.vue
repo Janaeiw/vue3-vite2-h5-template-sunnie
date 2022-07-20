@@ -14,9 +14,9 @@
 </template>
 
 <script lang="ts" setup>
-  import router from '/@/router';
   // import { reactive, ref } from 'vue';
   import { useUserStore } from '/@/store/modules/user';
+  const router = useRouter();
   console.log(import.meta.env.MODE);
 
   const userStore = useUserStore();

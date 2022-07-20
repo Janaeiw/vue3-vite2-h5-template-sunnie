@@ -25,7 +25,6 @@
 
 <script lang="ts" setup>
   import { useUserStore } from '/@/store/modules/user';
-  // import { useRouter } from 'vue-router';
 
   const router = useRouter();
   const userStore = useUserStore();
