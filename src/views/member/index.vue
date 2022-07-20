@@ -28,16 +28,7 @@
   // import { useRouter } from 'vue-router';
 
   const router = useRouter();
-  const userStore =
-    import.meta.env.MODE != 'development'
-      ? {
-          info: {
-            author: 'Janaeiw',
-            avatar: '/images/avatar.jpg',
-            projectAddress: 'https://github.com/Janaeiw/vue3-vite2-h5-template-sunnie',
-          },
-        }
-      : useUserStore();
+  const userStore = useUserStore();
   const goLogin = () => {
     router.push('/login');
   };

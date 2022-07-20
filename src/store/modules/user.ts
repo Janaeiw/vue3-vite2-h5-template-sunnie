@@ -3,7 +3,7 @@ import { useCookies } from '@vueuse/integrations/useCookies';
 import { defineStore } from 'pinia';
 import { AnyObject } from '/#/global';
 
-const { VITE_TOKEN_KEY } = import.meta.env;
+const { VITE_TOKEN_KEY, MODE } = import.meta.env;
 const token = useCookies().get(VITE_TOKEN_KEY as string);
 
 interface StoreUser {
@@ -30,7 +30,15 @@ export const useUserStore = defineStore({
       return new Promise((resolve) => {
         login(_data).then((res: any) => {
           const { result } = res;
-          this.setInfo(result);
+          if (MODE == 'development') {
+            this.setInfo(result);
+          } else {
+            this.setInfo({
+              author: 'Janaeiw',
+              avatar: '/vue3-vite2-h5-template-sunnie/images/avatar.jpg',
+              projectAddress: 'https://github.com/Janaeiw/vue3-vite2-h5-template-sunnie',
+            });
+          }
           // useCookies().set(VITE_TOKEN_KEY as string, data.value.token);
           resolve(result);
         });
