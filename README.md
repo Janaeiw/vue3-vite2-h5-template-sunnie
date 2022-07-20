@@ -1,8 +1,6 @@
 # 前述
 
-基于 vue3 + vite + nut ui + sass + viewport 适配方案 +axios 封装，构建手机端模板脚手架如果不熟悉 vue3，想继续使用 vue2 开发的，可以[点这里](https://github.com/sunniejs/vue-h5-template/tree/vue2-h5-template)来获取 vue2-h5-template
-
-掘金: [移动端适配方案](https://juejin.cn/post/7018433228591595550)
+基于 vue3 + vite + nut ui + sass + viewport 适配方案 +axios 封装，构建手机端模板脚手架如果不熟悉 vue3，想继续使用 vue2 开发的，可以[点这里](https://janaeiw.github.io/vue3-vite2-h5-template-sunnie/)来查看 demo
 
 <img src="./public/images/screen.png" width="320" style="display:inline; ">
 

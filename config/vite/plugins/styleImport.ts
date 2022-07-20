@@ -6,26 +6,36 @@
 
 import { createStyleImportPlugin, NutuiResolve, VantResolve } from 'vite-plugin-style-import';
 
-export const ConfigStyleImport = () => {
+type libsType = {
+  libraryName?: string;
+  libraryNameChangeCase?: string;
+  esModule?: Boolean;
+  resolveStyle?: Function;
+}[];
+
+export const ConfigStyleImport = (isBuild: any) => {
+  const libs: libsType = [
+    {
+      libraryName: 'vant',
+      esModule: true,
+      resolveStyle: (name: any) => {
+        return `../es/${name}/style/index`;
+      },
+    },
+  ];
+  if (isBuild) {
+    libs.push({
+      libraryName: '@nutui/nutui',
+      libraryNameChangeCase: 'pascalCase',
+      esModule: true,
+      resolveStyle: (name: any) => {
+        name = name.toLowerCase(); //NutuiResolve官方版目前在linux会造成大小写不一致问题无法加载资源
+        return `@nutui/nutui/dist/packages/${name}/index.scss`;
+      },
+    });
+  }
   return createStyleImportPlugin({
     resolves: [NutuiResolve(), VantResolve()],
-    libs: [
-      {
-        libraryName: 'vant',
-        esModule: true,
-        resolveStyle: (name) => {
-          return `../es/${name}/style/index`;
-        },
-      },
-      {
-        libraryName: '@nutui/nutui',
-        libraryNameChangeCase: 'pascalCase',
-        esModule: true,
-        resolveStyle: (name) => {
-          name = name.toLowerCase(); //NutuiResolve官方版目前在linux会造成大小写不一致问题无法加载资源
-          return `@nutui/nutui/dist/packages/${name}/index.scss`;
-        },
-      },
-    ],
+    libs: <any>[...libs],
   });
 };

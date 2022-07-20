@@ -49,7 +49,7 @@ export function createVitePlugins(isBuild: boolean) {
   vitePlugins.push(ConfigProgressPlugin());
 
   //styleImport
-  vitePlugins.push(ConfigStyleImport());
+  vitePlugins.push(ConfigStyleImport(isBuild));
 
   // eruda
   vitePlugins.push(ConfigEruda());
