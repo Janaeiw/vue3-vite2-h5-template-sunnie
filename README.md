@@ -29,6 +29,7 @@ npm run dev
 - [√ 配置多环境变量](#env)
 - [√ viewport 适配方案](#viewport)
 - [√ vantUI 组件按需加载](#vantUI)
+- [√ nutUI 组件按需加载](#nutUI)
 - [√ Pinia 状态管理](#Pinia)
 - [√ Vue-router4](#router)
 - [√ Axios 封装及接口管理](#axios)
@@ -176,6 +177,69 @@ export const vantUiComponents = [Button, Cell, CellGroup];
 
 // 在main.ts文件中引入
 vantUiComponents.forEach((item) => {
+  app.use(item);
+});
+```
+
+[▲ 回顶部](#top)
+
+### <span id="nutUI">✅ nutUI 组件按需加载 </span>
+
+Vite 构建工具，使用 vite-plugin-style-import 实现按需引入。
+
+#### 安装插件
+
+```bash
+npm i vite-plugin-style-import -D
+```
+
+在 `vite.config.ts` 设置，nutUI 为啥这样子配置[点这里](https://segmentfault.com/q/1010000041949770)
+
+```javascript
+ import { createStyleImportPlugin, NutuiResolve } from 'vite-plugin-style-import';
+
+ const libs: libsType = [ ];
+ if (isBuild) {
+   libs.push({
+   libraryName: '@nutui/nutui',
+   libraryNameChangeCase: 'pascalCase',
+   esModule: true,
+   resolveStyle: (name: any) => {
+     name = name.toLowerCase(); //NutuiResolve官方版目前在linux会造成大小写不一致问题无法加载资源
+     return `@nutui/nutui/dist/packages/${name}/index.scss`;
+     },
+   });
+ }
+ plugins: [
+     ...
+     createStyleImportPlugin({
+         resolves: [NutuiResolve()],
+        libs: <any>[...libs],
+     }),
+     ...
+ ],
+ css: {
+   preprocessorOptions: {
+     scss: {
+       // 配置 nutui 全局 scss 变量
+       additionalData: `@import "@nutui/nutui/dist/styles/variables.scss";`,
+     },
+   },
+ },
+```
+
+#### 使用组件
+
+项目在 `plugins/nutUI.ts` 下统一管理组件，用哪个引入哪个，无需在页面里重复引用
+
+```javascript
+// 按需全局引入nutUI组件
+import { Button } from '@nutui/nutui';
+export const nutUiComponents = [Button];
+
+// 在main.ts文件中引入
+import { nutUiComponents } from './plugins/nutUI';
+nutUiComponents.forEach((item) => {
   app.use(item);
 });
 ```
