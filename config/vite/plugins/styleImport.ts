@@ -13,7 +13,7 @@ type libsType = {
   resolveStyle?: Function;
 }[];
 
-export const ConfigStyleImport = (isBuild: any) => {
+export const ConfigStyleImport = (_isBuild: any) => {
   const libs: libsType = [
     {
       libraryName: 'vant',
@@ -23,7 +23,7 @@ export const ConfigStyleImport = (isBuild: any) => {
       },
     },
   ];
-  if (isBuild) {
+  if (_isBuild) {
     libs.push({
       libraryName: '@nutui/nutui',
       libraryNameChangeCase: 'pascalCase',
