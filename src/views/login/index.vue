@@ -16,6 +16,7 @@
 <script lang="ts" setup>
   // import { reactive, ref } from 'vue';
   import { useUserStore } from '/@/store/modules/user';
+  import { genUUID } from '/@/utils/uuid';
   const router = useRouter();
   console.log(import.meta.env.MODE);
 
@@ -32,7 +33,7 @@
           import.meta.env.MODE != 'development'
             ? {
                 account: 'frontend@cpapi.com',
-                password: 'Password123',
+                password: genUUID(8) + window.btoa('Password123'),
                 type: 'PASSWORD',
               }
             : { ...formData };
