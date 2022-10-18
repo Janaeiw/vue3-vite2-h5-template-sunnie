@@ -1,0 +1,1 @@
+const t=(t,o)=>{const e="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".split(""),n=[];let r;if(o=o||e.length,t)for(r=0;r<t;r++)n[r]=e[0|Math.random()*o];else{let t;for(n[8]=n[13]=n[18]=n[23]="-",n[14]="4",r=0;r<36;r++)n[r]||(t=0|16*Math.random(),n[r]=e[19==r?3&t|8:t])}return n.join("")};export{t as g};
