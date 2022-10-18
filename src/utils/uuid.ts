@@ -1,16 +1,7 @@
-/*
- * @Author: Janaeiw
- * @Date: 2022/10/18 17:30
- * @LastEditTime: 2022/10/18 17:30
- * @LastEditors: Janaeiw
- * @FilePath: \vue3-vite2-h5-template-sunnie\src\utils\uuid.js
- * @Description: '随机生成uuid'
- */
-
-export function genUUID(len, radix) {
-  let chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
-  let uuid = [],
-    i;
+export const genUUID = (len?: number, radix?: number) => {
+  const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
+  let uuid: any[] = [],
+    i: number;
   radix = radix || chars.length;
 
   if (len) {
@@ -18,7 +9,7 @@ export function genUUID(len, radix) {
       uuid[i] = chars[0 | (Math.random() * radix)];
     }
   } else {
-    let r;
+    let r: number;
     uuid[8] = uuid[13] = uuid[18] = uuid[23] = '-';
     uuid[14] = '4';
     for (i = 0; i < 36; i++) {
@@ -29,4 +20,4 @@ export function genUUID(len, radix) {
     }
   }
   return uuid.join('');
-}
+};

@@ -14,56 +14,56 @@
 </template>
 
 <script lang="ts" setup>
-  // import { reactive, ref } from 'vue';
-  import { useUserStore } from '/@/store/modules/user';
-  import { genUUID } from '/@/utils/uuid';
-  const router = useRouter();
-  console.log(import.meta.env.MODE);
+// import { reactive, ref } from 'vue';
+import { useUserStore } from '/@/store/modules/user';
+import { genUUID } from '/@/utils/uuid';
+const router = useRouter();
+console.log(import.meta.env.MODE);
 
-  const userStore = useUserStore();
-  const formData = reactive({
-    name: 'admin',
-    pwd: '123456',
+const userStore = useUserStore();
+const formData = reactive({
+  name: 'admin',
+  pwd: '123456',
+});
+const ruleForm = ref<any>(null);
+const submit = () => {
+  ruleForm.value.validate().then(async ({ valid, errors }: any) => {
+    if (valid) {
+      const data =
+        import.meta.env.MODE != 'development'
+          ? {
+            account: 'frontend@cpapi.com',
+            password: genUUID(8) + window.btoa('Password123'),
+            type: 'PASSWORD',
+          }
+          : { ...formData };
+      userStore.login(data).then((_res: any) => {
+        router.push({ path: '/member' });
+      });
+    } else {
+      console.log('error submit!!', errors);
+    }
   });
-  const ruleForm = ref<any>(null);
-  const submit = () => {
-    ruleForm.value.validate().then(async ({ valid, errors }: any) => {
-      if (valid) {
-        const data =
-          import.meta.env.MODE != 'development'
-            ? {
-                account: 'frontend@cpapi.com',
-                password: genUUID(8) + window.btoa('Password123'),
-                type: 'PASSWORD',
-              }
-            : { ...formData };
-        userStore.login(data).then((_res: any) => {
-          router.push({ path: '/member' });
-        });
-      } else {
-        console.log('error submit!!', errors);
-      }
-    });
-  };
+};
 </script>
 
 <style scoped lang="scss">
-  .login {
-    padding: 20px;
+.login {
+  padding: 20px;
 
-    h2 {
-      text-align: center;
-      letter-spacing: 10px;
-    }
+  h2 {
+    text-align: center;
+    letter-spacing: 10px;
+  }
 
-    .nut-form-item {
-      background: #f2f3f5;
-      border-radius: 20px;
-      margin-bottom: 20px;
+  .nut-form-item {
+    background: #f2f3f5;
+    border-radius: 20px;
+    margin-bottom: 20px;
 
-      input {
-        background: transparent;
-      }
+    input {
+      background: transparent;
     }
   }
+}
 </style>
