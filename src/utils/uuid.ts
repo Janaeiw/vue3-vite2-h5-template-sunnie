@@ -1,9 +1,8 @@
 export const genUUID = (len?: number, radix?: number) => {
   const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
-  let uuid: any[] = [],
-    i: number;
+  const uuid: any[] = [];
+  let i: number;
   radix = radix || chars.length;
-
   if (len) {
     for (i = 0; i < len; i++) {
       uuid[i] = chars[0 | (Math.random() * radix)];
