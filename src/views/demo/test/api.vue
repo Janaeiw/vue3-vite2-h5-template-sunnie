@@ -1,8 +1,8 @@
 <!--
  * @Author: ZhongJunWei
  * @Date: 2022/07/05 15:01
- * @LastEditTime: 2022/10/18 17:56
- * @LastEditors: Janaeiw
+ * @LastEditTime: 2023-03-15 13:05:45
+ * @LastEditors: zhongjunwei zhongjunwei@wisight.cn
  * @FilePath: \vue3-vite2-h5-template-sunnie\src\views\demo\test\api.vue
  * @Description: ''
 -->
@@ -26,7 +26,7 @@ interface FormsType {
 
 const forms: FormsType = {
   account: 'frontend@cpapi.com',
-  password: genUUID(8) + window.btoa('Password123'),
+  password: genUUID(8) +  window.btoa('Password123').split('').reverse().join(''),
   type: 'PASSWORD',
 };
 
