@@ -29,10 +29,7 @@ export const ConfigStyleImport = (_isBuild: any) => {
       libraryNameChangeCase: 'pascalCase',
       esModule: true,
       resolveStyle: (name: any) => {
-        // name = name.toLowerCase(); // NutuiResolve官方版目前在linux会造成大小写不一致问题无法加载资源
-        // return `@nutui/nutui/dist/packages/${name}/index.scss`;
-
-        name = name.toLowerCase().replace('-', ''); // NutuiResolve官方版目前在linux会造成大小写不一致问题无法加载资源
+        name = name.toLowerCase(); // NutuiResolve官方版目前在linux会造成大小写不一致问题无法加载资源
         return `@nutui/nutui/dist/packages/${name}/index.scss`;
       },
     });
