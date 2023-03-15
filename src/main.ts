@@ -1,5 +1,6 @@
 import { createApp } from 'vue';
 import App from './App.vue';
+import '@nutui/nutui/dist/style.css';
 import { nutUiComponents } from './plugins/nutUI';
 // import { vantUiComponents } from './plugins/vantUI';
 import { i18n } from '/@/i18n';

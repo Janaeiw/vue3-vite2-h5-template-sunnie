@@ -23,19 +23,17 @@ export const ConfigStyleImport = (_isBuild: any) => {
       },
     },
   ];
-  if (_isBuild) {
-    libs.push({
-      libraryName: '@nutui/nutui',
-      libraryNameChangeCase: 'pascalCase',
-      esModule: true,
-      resolveStyle: (name: any) => {
-        // name = name.toLowerCase(); //NutuiResolve官方版目前在linux会造成大小写不一致问题无法加载资源
-        // return `@nutui/nutui/dist/packages/${name}/index.scss`;
-        const partialName = name.slice(3);
-        return `@nutui/nutui/dist/packages/${partialName.toLowerCase()}/style`;
-      },
-    });
-  }
+  // if (_isBuild) {
+  //   libs.push({
+  //     libraryName: '@nutui/nutui',
+  //     libraryNameChangeCase: 'pascalCase',
+  //     esModule: true,
+  //     resolveStyle: (name: any) => {
+  //       name = name.toLowerCase(); // NutuiResolve官方版目前在linux会造成大小写不一致问题无法加载资源
+  //       return `@nutui/nutui/dist/packages/${name}/index.scss`;
+  //     },
+  //   });
+  // }
   return createStyleImportPlugin({
     resolves: [NutuiResolve(), VantResolve()],
     libs: <any>[...libs],
