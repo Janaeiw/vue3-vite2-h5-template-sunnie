@@ -25,7 +25,6 @@ npm run dev
 
 # <span id="top">目录</span>
 
-- √ vite
 - [√ 配置多环境变量](#env)
 - [√ viewport 适配方案](#viewport)
 - [√ vantUI 组件按需加载](#vantUI)
