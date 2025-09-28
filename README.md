@@ -2,15 +2,15 @@
 
 基于 vue3 + vite2 + nutUI/vantUI + sass + viewport 适配方案 +axios 封装，构建手机端模板脚手架如果不熟悉 vue3，想继续使用 vue2 开发的，可以[点这里](https://github.com/sunniejs/vue-h5-template/tree/vue2-h5-template)来获取 vue2-h5-template，想查看模板 demo 的可以[点这里](https://janaeiw.github.io/vue3-vite2-h5-template-sunnie/)
 
-## 项目介绍
+# 项目介绍
 
-### Node 版本要求
+## Node 版本要求
 
 推荐你使用 nodejs 14+版本，毕竟技术日新月异。你可以使用 [fnm](https://github.com/Schniz/fnm?tab=readme-ov-file) 在同一台电脑中管理多个 Node 版本。
 
 本示例 Node.js 14.19.0
 
-### 启动项目
+## 启动项目
 
 ```bash
 
@@ -39,7 +39,7 @@ npm run dev
 - [√ Eslint+Pettier+stylelint 统一开发规范 ](#lint)
 - [√ 自定义指令 按钮权限 ](#directive)
 
-### <span id="env">✅ 配置多环境变量 </span>
+## <span id="env">✅ 配置多环境变量 </span>
 
 `package.json` 里的 `scripts` 配置 `dev` `dev:test` `dev:prod` ，通过 `--mode xxx` 来执行不同环境
 
@@ -57,13 +57,13 @@ npm run dev
 
 [▲ 回顶部](#top)
 
-### <span id="viewport">✅ viewport 适配方案 </span>
+## <span id="viewport">✅ viewport 适配方案 </span>
 
 不用担心，项目已经配置好了 `viewport` 适配, 下面仅做介绍：
 
 - [postcss-px-to-viewport-8-plugin](https://github.com/xian88888888/postcss-px-to-viewport-8-plugin) 是一款 `postcss` 插件，用于将单位转化为 `vw`, 现在很多浏览器对`vw`的支持都很好。
 
-##### PostCSS 配置
+### PostCSS 配置
 
 下面提供了一份基本的 `postcss` 配置，可以在此配置的基础上根据项目需求进行修改
 
@@ -132,11 +132,11 @@ module.exports = {
 
 [▲ 回顶部](#top)
 
-### <span id="vantUI">✅ vantUI 组件按需加载 </span>
+## <span id="vantUI">✅ vantUI 组件按需加载 </span>
 
 Vite 构建工具，使用 vite-plugin-style-import 实现按需引入。
 
-#### 安装插件
+### 安装插件
 
 ```bash
 npm i vite-plugin-style-import -D
@@ -165,7 +165,7 @@ npm i vite-plugin-style-import -D
  ],
 ```
 
-#### 使用组件
+### 使用组件
 
 项目在 `plugins/vantUI.ts` 下统一管理组件，用哪个引入哪个，无需在页面里重复引用
 
@@ -183,11 +183,11 @@ vantUiComponents.forEach((item) => {
 
 [▲ 回顶部](#top)
 
-### <span id="nutUI">✅ nutUI 组件按需加载 </span>
+## <span id="nutUI">✅ nutUI 组件按需加载 </span>
 
 Vite 构建工具，使用 vite-plugin-style-import 实现按需引入。
 
-#### 安装插件
+### 安装插件
 
 ```bash
 npm i vite-plugin-style-import -D
@@ -228,7 +228,7 @@ npm i vite-plugin-style-import -D
  },
 ```
 
-#### 使用组件
+### 使用组件
 
 项目在 `plugins/nutUI.ts` 下统一管理组件，用哪个引入哪个，无需在页面里重复引用
 
@@ -246,7 +246,7 @@ nutUiComponents.forEach((item) => {
 
 [▲ 回顶部](#top)
 
-### <span id="Pinia">✅ Pinia 状态管理</span>
+## <span id="Pinia">✅ Pinia 状态管理</span>
 
 下一代 vuex，使用极其方便，ts 兼容好
 
@@ -271,7 +271,7 @@ nutUiComponents.forEach((item) => {
 
 [▲ 回顶部](#top)
 
-### <span id="router">✅ Vue-router </span>
+## <span id="router">✅ Vue-router </span>
 
 本案例采用 `hash` 模式，开发者根据需求修改 `mode` `base`
 
@@ -305,7 +305,7 @@ export default router;
 
 [▲ 回顶部](#top)
 
-### <span id="axios">✅ Axios 封装及接口管理</span>
+## <span id="axios">✅ Axios 封装及接口管理</span>
 
 `utils/request.js` 封装 axios , 开发者需要根据后台接口做修改。
 
@@ -373,7 +373,7 @@ service.interceptors.response.use(
 export default service;
 ```
 
-#### 接口管理
+## 接口管理
 
 在 `src/api` 文件夹下统一管理接口
 
@@ -400,7 +400,7 @@ export function getUserInfo(params) {
 }
 ```
 
-#### 如何调用
+### 如何调用
 
 ```javascript
 // 请求接口
@@ -416,7 +416,7 @@ getUserInfo(params)
 
 [▲ 回顶部](#top)
 
-### <span id="base">✅ vite.config.ts 基础配置 </span>
+## <span id="base">✅ vite.config.ts 基础配置 </span>
 
 如果你的 `Vue Router` 模式是 hash
 
@@ -464,7 +464,7 @@ export default function ({ command }: ConfigEnv): UserConfigExport {
 
 [▲ 回顶部](#top)
 
-### <span id="alias">✅ 配置 alias 别名 </span>
+## <span id="alias">✅ 配置 alias 别名 </span>
 
 ```javascript
 resolve: {
@@ -488,7 +488,7 @@ resolve: {
 
 [▲ 回顶部](#top)
 
-### <span id="proxy">✅ 配置 proxy 跨域 </span>
+## <span id="proxy">✅ 配置 proxy 跨域 </span>
 
 ```javascript
 server: {
@@ -504,7 +504,7 @@ server: {
 
 [▲ 回顶部](#top)
 
-### <span id="lint">✅ Eslint+Pettier+stylelint 统一开发规范 </span>
+## <span id="lint">✅ Eslint+Pettier+stylelint 统一开发规范 </span>
 
 根目录下的`.eslintrc.js`、`.stylelint.config.js`、`.prettier.config.js`内置了 lint 规则，帮助你规范地开发代码，有助于提高团队的代码质量和协作性，可以根据团队的规则进行修改
 
