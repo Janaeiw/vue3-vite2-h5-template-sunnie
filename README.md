@@ -2,6 +2,8 @@
 
 基于 vue3 + vite2 + nutUI/vantUI + sass + viewport 适配方案 +axios 封装，构建手机端模板脚手架如果不熟悉 vue3，想继续使用 vue2 开发的，可以[点这里](https://github.com/sunniejs/vue-h5-template/tree/vue2-h5-template)来获取 vue2-h5-template，想查看模板 demo 的可以[点这里](https://janaeiw.github.io/vue3-vite2-h5-template-sunnie/)
 
+## 项目介绍
+
 ### Node 版本要求
 
 推荐你使用 nodejs 14+版本，毕竟技术日新月异。你可以使用 [fnm](https://github.com/Schniz/fnm?tab=readme-ov-file) 在同一台电脑中管理多个 Node 版本。
