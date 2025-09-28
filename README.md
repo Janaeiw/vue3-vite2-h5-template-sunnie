@@ -4,7 +4,7 @@
 
 ### Node 版本要求
 
-推荐你使用 nodejs 14+版本，毕竟技术日新月异。你可以使用 [nvm](https://github.com/nvm-sh/nvm) 或 [nvm-windows](https://github.com/coreybutler/nvm-windows) 在同一台电脑中管理多个 Node 版本。
+推荐你使用 nodejs 14+版本，毕竟技术日新月异。你可以使用 [fnm](https://github.com/Schniz/fnm?tab=readme-ov-file) 在同一台电脑中管理多个 Node 版本。
 
 本示例 Node.js 14.19.0
 
