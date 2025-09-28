@@ -17,7 +17,7 @@
     "deps": "yarn upgrade-interactive --latest"
   },
   "dependencies": {
-    "@nutui/nutui": "^3.1.22",
+    "@nutui/nutui": "3.1.22",
     "@vueuse/core": "8.7.5",
     "@vueuse/integrations": "8.7.5",
     "axios": "0.27.2",
